@@ -44,23 +44,23 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 
-        // tag::getLogout[]
-        ILogout logout = logoutHandler.getLogout();
-        // end::getLogout[]
-        // tag::revoke[]
-        Response logoutResponse = logout.logout();
-        // end::revoke[]
+        // // tag::getLogout[]
+        // ILogout logout = logoutHandler.getLogout();
+        // // end::getLogout[]
+        // // tag::revoke[]
+        // Response logoutResponse = logout.logout();
+        // // end::revoke[]
 
-        // tag::errorHandle[]
-        Response.Status.Family responseCodeFamily = logoutResponse
-                .getStatusInfo()
-                .getFamily();
-        if (!responseCodeFamily.equals(Response.Status.Family.SUCCESSFUL)) {
-            Logger.getLogger("LogoutServlet").log(Level.SEVERE,
-                    logoutResponse.readEntity(Map.class).toString());
-            throw new ServletException("Could not delete OAuth2 application grant");
-        }
-        // end::errorHandle[]
+        // // tag::errorHandle[]
+        // Response.Status.Family responseCodeFamily = logoutResponse
+        //         .getStatusInfo()
+        //         .getFamily();
+        // if (!responseCodeFamily.equals(Response.Status.Family.SUCCESSFUL)) {
+        //     Logger.getLogger("LogoutServlet").log(Level.SEVERE,
+        //             logoutResponse.readEntity(Map.class).toString());
+        //     throw new ServletException("Could not delete OAuth2 application grant");
+        // }
+        // // end::errorHandle[]
 
         // tag::logout[]
         request.logout();
