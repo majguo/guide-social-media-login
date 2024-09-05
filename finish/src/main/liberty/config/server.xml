@@ -35,9 +35,16 @@
     <!-- Social Login Configuration -->
     <!-- Github Login -->
     <!-- tag::githubLogin[] -->
-    <githubLogin clientId="${github.client.id}"
-                 clientSecret="${github.client.secret}" />
+    <!-- <githubLogin clientId="${github.client.id}"
+                 clientSecret="${github.client.secret}" /> -->
     <!-- end::githubLogin[] -->
+
+    <oidcLogin
+        id="liberty-aad-oidc-javaeecafe" clientId="${client.id}"
+        clientSecret="${client.secret}"
+        discoveryEndpoint="https://login.microsoftonline.com/${tenant.id}/v2.0/.well-known/openid-configuration"
+        signatureAlgorithm="RS256"
+        userNameAttribute="preferred_username" />
 
     <!-- tag::webApplication[] -->
     <webApplication location="guide-social-login.war"
