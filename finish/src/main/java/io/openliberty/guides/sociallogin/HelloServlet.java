@@ -20,6 +20,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.ibm.websphere.security.social.UserProfileManager;
+import java.util.List;
+
 @WebServlet(name = "HelloServlet", urlPatterns = "/hello")
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = {"users"},
         transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL))
@@ -30,6 +33,11 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+        
+        @SuppressWarnings("unchecked")
+        List<String> groups = UserProfileManager.getUserProfile().getIdToken().getClaims().getClaim("groups",
+                List.class);
+        System.out.println(groups);
 
         String username = request.getUserPrincipal().getName();
         request.setAttribute("username", username);
