@@ -22,8 +22,7 @@
 
     <!-- Set up default key store, trust stores for auth APIs -->
     <!-- tag::keystore[] -->
-    <keyStore id="defaultKeyStore"
-              password="changeit" />
+    <keyStore id="defaultKeyStore" />
     <!-- end::keystore[] -->
 
     <!-- SSL configuration for auth services -->
