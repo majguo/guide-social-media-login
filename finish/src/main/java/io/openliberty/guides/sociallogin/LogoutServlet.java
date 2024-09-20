@@ -37,7 +37,7 @@ public class LogoutServlet extends HttpServlet {
         // end::logout[]
 
         // tag::redirect[]
-        response.sendRedirect("hello.html");
+        response.sendRedirect("/");
         // end::redirect[]
     }
 }

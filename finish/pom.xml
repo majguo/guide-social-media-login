@@ -21,9 +21,6 @@
         <!-- tag::defaultHttpsPort[] -->
         <liberty.var.https.port>9443</liberty.var.https.port>
         <!-- end::defaultHttpsPort[] -->
-        <!-- tag::appContextRoot[] -->
-        <liberty.var.app.context.root>api</liberty.var.app.context.root>
-        <!-- end::appContextRoot[] -->
     </properties>
 
     <dependencies>

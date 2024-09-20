@@ -48,7 +48,7 @@
 
     <!-- tag::webApplication[] -->
     <webApplication location="guide-social-login.war"
-                    contextRoot="${app.context.root}">
+                    contextRoot="/">
         <!-- tag::applicationBnd[] -->
         <application-bnd>
             <!-- tag::users[] -->
