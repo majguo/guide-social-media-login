@@ -39,6 +39,11 @@ public class HelloServlet extends HttpServlet {
                 List.class);
         System.out.println(groups);
 
+        @SuppressWarnings("unchecked")
+        List<String> roles = UserProfileManager.getUserProfile().getIdToken().getClaims().getClaim("roles",
+                List.class);
+        System.out.println(roles);
+
         String username = request.getUserPrincipal().getName();
         request.setAttribute("username", username);
 
